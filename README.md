@@ -166,7 +166,7 @@ plt.scatter(d1[:,0], d1[:,1])
 
 <div class="output display_data">
 
-![](f9b4bd263aaeca2221e6c0c4be64e220427a1e15.png)
+![](images\f9b4bd263aaeca2221e6c0c4be64e220427a1e15.png)
 
 </div>
 
@@ -222,7 +222,7 @@ plt.scatter(d2[:,0], d2[:,1])
 
 <div class="output display_data">
 
-![](ae0e111323e65d15c1878c62ba408099ab24e530.png)
+![](images\ae0e111323e65d15c1878c62ba408099ab24e530.png)
 
 </div>
 
@@ -243,7 +243,7 @@ plt.show()
 
 <div class="output display_data">
 
-![](7bf908c4ad60e82494c8afa06ff7083a99e8ee0a.png)
+![](images\7bf908c4ad60e82494c8afa06ff7083a99e8ee0a.png)
 
 </div>
 
