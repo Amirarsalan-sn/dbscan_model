@@ -1,6 +1,7 @@
 
 <div class="cell markdown" id="LPk303PVeKWq">
 DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a popular density-based clustering algorithm used in machine learning and data mining. It groups together data points that are close to each other based on their density in the feature space.
+
 Here, I've implemented a DBSCAN model using python language from scratch. Lets see how it works.
 
 First, lets imports the libraries we want.
@@ -165,7 +166,7 @@ plt.scatter(d1[:,0], d1[:,1])
 
 <div class="output display_data">
 
-![](images\f9b4bd263aaeca2221e6c0c4be64e220427a1e15.png)
+![](images/f9b4bd263aaeca2221e6c0c4be64e220427a1e15.png)
 
 </div>
 
