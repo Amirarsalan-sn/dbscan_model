@@ -1,71 +1,67 @@
----
-jupyter:
-  colab:
-  kernelspec:
-    display_name: Python 3
-    name: python3
-  language_info:
-    name: python
-  nbformat: 4
-  nbformat_minor: 0
----
 
-::: {.cell .markdown id="LPk303PVeKWq"}
-Here, I\'ve implemented a DBSCAN model using python language from
+<div class="cell markdown" id="LPk303PVeKWq">
+
+Here, I've implemented a DBSCAN model using python language from
 scratch. Lets see how it works.
 
 First, lets imports the libraries we want.
-:::
 
-::: {.cell .code execution_count="1" id="mFghvGqwBcm7"}
+</div>
+
+<div class="cell code" execution_count="1" id="mFghvGqwBcm7">
+
 ``` python
 import numpy as np
 from matplotlib import pyplot as plt
 ```
-:::
 
-::: {.cell .markdown id="j2ejNWEkeRnW"}
+</div>
+
+<div class="cell markdown" id="j2ejNWEkeRnW">
+
 The class below, is implemented to find the clusters using DBSCAN
 algorithm. It has 6 methods:
 
-\##**init method:**\## This method initiates the parameters of the class
+##**init method:**## This method initiates the parameters of the class
 and does some preproseccing on the data you give to it. The details are
 described in the code.
 
-\##**is core method:**\## This method checks if the point you passed to
-it is a core object or not. If it was a core object it will store its
+##**is core method:**## This method checks if the point you passed to it
+is a core object or not. If it was a core object it will store its
 neighbor objects on a dictionary called neighbor_dict.
 
-\##**preprocessing method:**\## This method finds the core objects and
+##**preprocessing method:**## This method finds the core objects and
 their neighbors using the \_is_core(self, d) method, before the main
 methods are invoked.
 
-\##**find neighbors method:**\## This method finds the density reachable
+##**find neighbors method:**## This method finds the density reachable
 objects in a cluster.At first, you should give the first core object of
 the cluster you want to find its data_points as the parameter, then, the
 method will find other density reachable objects inside that cluster
 using a recursive-dfs-like algorithm. The approach is simple, it lables
 the points that are directly density reachable from the core point
-you\'ve specified on the parameter as points in one cluster, and it will
+you've specified on the parameter as points in one cluster, and it will
 invoke the same method on other core objects which are also directly
 density reachable from the core object in the parameter. This way the
 method will find all the density reachable objects in a cluster.
 
-\##**fit method:**\## This method finds out how many clusters there are
+##**fit method:**## This method finds out how many clusters there are
 and finds the points inside these clusters using the
 self.\_find_neighbors(self, data_point) method.
 
-\##**show clusters:**\## This method plots the clusters AND the noises
-our model found. You should write the code snippet below after you
-invoked this method:
+##**show clusters:**## This method plots the clusters AND the noises our
+model found. You should write the code snippet below after you invoked
+this method:
 
     plt.legend()
     plt.show()
 
 Note that you should use this method only after the fit() method.
-:::
 
-::: {.cell .code execution_count="64" id="DiIE960BCdsR"}
+</div>
+
+<div class="cell code" execution_count="64" id="DiIE960BCdsR">
+
 ``` python
 class DBSCAN:
   def __init__(self, eps, min_pts, data_set : np.array):
@@ -144,32 +140,48 @@ class DBSCAN:
     plt.title(f'{int(max(unique_labels))+1} Clusters Found with eps: {self.eps} and minpts: {self.min_pts}')
 
 ```
-:::
 
-::: {.cell .markdown id="218xuIp4kFeI"}
+</div>
+
+<div class="cell markdown" id="218xuIp4kFeI">
+
 Loading the data and plotting the data:
-:::
 
-::: {.cell .code execution_count="65" colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":448}" id="EiOW2wGOGpTC" outputId="5b1b1157-9e87-4811-fdd5-6e10bcbbe454"}
+</div>
+
+<div class="cell code" execution_count="65"
+colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:448}"
+id="EiOW2wGOGpTC" outputId="5b1b1157-9e87-4811-fdd5-6e10bcbbe454">
+
 ``` python
 d1 = np.genfromtxt('d1.csv', delimiter=',')[1:]
 plt.scatter(d1[:,0], d1[:,1])
 ```
 
-::: {.output .execute_result execution_count="65"}
+<div class="output execute_result" execution_count="65">
+
     <matplotlib.collections.PathCollection at 0x7c08d5502890>
-:::
 
-::: {.output .display_data}
-![](vertopal_d6d07080e480444397f910d84cb7eeb7/f9b4bd263aaeca2221e6c0c4be64e220427a1e15.png)
-:::
-:::
+</div>
 
-::: {.cell .markdown id="VTVeQr6gkK__"}
+<div class="output display_data">
+
+![](f9b4bd263aaeca2221e6c0c4be64e220427a1e15.png)
+
+</div>
+
+</div>
+
+<div class="cell markdown" id="VTVeQr6gkK__">
+
 Now use the DBSCAN class to find clusters:
-:::
 
-::: {.cell .code execution_count="66" colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":452}" id="R6O6kdxbGxfZ" outputId="748b9e1a-1daf-4c2e-fe31-9531cbefbcc8"}
+</div>
+
+<div class="cell code" execution_count="66"
+colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}"
+id="R6O6kdxbGxfZ" outputId="748b9e1a-1daf-4c2e-fe31-9531cbefbcc8">
+
 ``` python
 eps, min_pts = 0.15, 5
 dbscn = DBSCAN(eps=eps, min_pts=min_pts, data_set=d1)
@@ -179,31 +191,47 @@ plt.legend()
 plt.show()
 ```
 
-::: {.output .display_data}
-![](vertopal_d6d07080e480444397f910d84cb7eeb7/687a54accde9c0c5f311830c3075bbcb4e838640.png)
-:::
-:::
+<div class="output display_data">
 
-::: {.cell .markdown id="GraCBmEykQZ9"}
+![](687a54accde9c0c5f311830c3075bbcb4e838640.png)
+
+</div>
+
+</div>
+
+<div class="cell markdown" id="GraCBmEykQZ9">
+
 Lets test our DBSCAN class on another data set.
-:::
 
-::: {.cell .code execution_count="67" colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":448}" id="5O4PbnUlHoa8" outputId="c6225db2-9f00-4e84-8526-06fef8781254"}
+</div>
+
+<div class="cell code" execution_count="67"
+colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:448}"
+id="5O4PbnUlHoa8" outputId="c6225db2-9f00-4e84-8526-06fef8781254">
+
 ``` python
 d2 = np.genfromtxt('d2.csv', delimiter=',')[1:]
 plt.scatter(d2[:,0], d2[:,1])
 ```
 
-::: {.output .execute_result execution_count="67"}
+<div class="output execute_result" execution_count="67">
+
     <matplotlib.collections.PathCollection at 0x7c08da874730>
-:::
 
-::: {.output .display_data}
-![](vertopal_d6d07080e480444397f910d84cb7eeb7/ae0e111323e65d15c1878c62ba408099ab24e530.png)
-:::
-:::
+</div>
 
-::: {.cell .code execution_count="68" colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":452}" id="6ipIDSQ9cNMn" outputId="f39a196b-a52b-4aad-beea-d1409e8cf981"}
+<div class="output display_data">
+
+![](ae0e111323e65d15c1878c62ba408099ab24e530.png)
+
+</div>
+
+</div>
+
+<div class="cell code" execution_count="68"
+colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}"
+id="6ipIDSQ9cNMn" outputId="f39a196b-a52b-4aad-beea-d1409e8cf981">
+
 ``` python
 eps, min_pts = 0.09, 5
 dbscn2 = DBSCAN(eps=eps, min_pts=min_pts, data_set=d2)
@@ -213,12 +241,17 @@ plt.legend()
 plt.show()
 ```
 
-::: {.output .display_data}
-![](vertopal_d6d07080e480444397f910d84cb7eeb7/7bf908c4ad60e82494c8afa06ff7083a99e8ee0a.png)
-:::
-:::
+<div class="output display_data">
 
-::: {.cell .code id="fcdSFKUCcXYI"}
+![](7bf908c4ad60e82494c8afa06ff7083a99e8ee0a.png)
+
+</div>
+
+</div>
+
+<div class="cell code" id="fcdSFKUCcXYI">
+
 ``` python
 ```
-:::
+
+</div>
