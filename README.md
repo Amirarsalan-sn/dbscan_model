@@ -1,8 +1,7 @@
 
 <div class="cell markdown" id="LPk303PVeKWq">
-
-Here, I've implemented a DBSCAN model using python language from
-scratch. Lets see how it works.
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a popular density-based clustering algorithm used in machine learning and data mining. It groups together data points that are close to each other based on their density in the feature space.
+Here, I've implemented a DBSCAN model using python language from scratch. Lets see how it works.
 
 First, lets imports the libraries we want.
 
