@@ -22,19 +22,27 @@ from matplotlib import pyplot as plt
 The class below, is implemented to find the clusters using DBSCAN
 algorithm. It has 6 methods:
 
-##**init method:**## This method initiates the parameters of the class
+##**init method:** 
+
+This method initiates the parameters of the class
 and does some preproseccing on the data you give to it. The details are
 described in the code.
 
-##**is core method:**## This method checks if the point you passed to it
+##**is core method:** 
+
+This method checks if the point you passed to it
 is a core object or not. If it was a core object it will store its
 neighbor objects on a dictionary called neighbor_dict.
 
-##**preprocessing method:**## This method finds the core objects and
+##**preprocessing method:** 
+
+This method finds the core objects and
 their neighbors using the \_is_core(self, d) method, before the main
 methods are invoked.
 
-##**find neighbors method:**## This method finds the density reachable
+##**find neighbors method:** 
+
+This method finds the density reachable
 objects in a cluster.At first, you should give the first core object of
 the cluster you want to find its data_points as the parameter, then, the
 method will find other density reachable objects inside that cluster
@@ -45,11 +53,15 @@ invoke the same method on other core objects which are also directly
 density reachable from the core object in the parameter. This way the
 method will find all the density reachable objects in a cluster.
 
-##**fit method:**## This method finds out how many clusters there are
+##**fit method:** 
+
+This method finds out how many clusters there are
 and finds the points inside these clusters using the
 self.\_find_neighbors(self, data_point) method.
 
-##**show clusters:**## This method plots the clusters AND the noises our
+##**show clusters:** 
+
+This method plots the clusters AND the noises our
 model found. You should write the code snippet below after you invoked
 this method:
 
@@ -193,7 +205,7 @@ plt.show()
 
 <div class="output display_data">
 
-![](687a54accde9c0c5f311830c3075bbcb4e838640.png)
+![](images/687a54accde9c0c5f311830c3075bbcb4e838640.png)
 
 </div>
 
@@ -222,7 +234,7 @@ plt.scatter(d2[:,0], d2[:,1])
 
 <div class="output display_data">
 
-![](images\ae0e111323e65d15c1878c62ba408099ab24e530.png)
+![](images/ae0e111323e65d15c1878c62ba408099ab24e530.png)
 
 </div>
 
@@ -243,7 +255,7 @@ plt.show()
 
 <div class="output display_data">
 
-![](images\7bf908c4ad60e82494c8afa06ff7083a99e8ee0a.png)
+![](images/7bf908c4ad60e82494c8afa06ff7083a99e8ee0a.png)
 
 </div>
 
