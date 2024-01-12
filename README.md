@@ -22,7 +22,7 @@ from matplotlib import pyplot as plt
 The class below, is implemented to find the clusters using DBSCAN
 algorithm. It has 6 methods:
 
-##**init method:** 
+#**init method:** 
 
 This method initiates the parameters of the class
 and does some preproseccing on the data you give to it. The details are
